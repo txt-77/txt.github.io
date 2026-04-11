@@ -10,14 +10,23 @@
 
 <body>
   <div class="container">
-    <video controls>
-      <source src="seu-video.mp4" type="video/mp4">
-      Seu navegador não suporta vídeo.
+    <video autoplay playsinline id="bgVideo">
+      <source src="/assets/cutscene.mp4" type="video/mp4" >
+      Seu navegador não suporta vídeo.(lol)
     </video>
 
-    <a href="seu-arquivo.zip" download class="btn">
-      Baixar agora
+    <a href="seu-arquivo.zip" download class="btn" id="botao">
+      download?
     </a>
   </div>
 </body>
 </html>
+<script>
+const video = document.getElementById("bgVideo");
+const botao = document.getElementById("botao");
+
+video.addEventListener("ended", () => {
+  botao.classList.add("ativo");
+  document.querySelector(".container").classList.add("ativo");
+});
+</script>
